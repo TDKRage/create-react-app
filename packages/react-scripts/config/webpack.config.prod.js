@@ -100,6 +100,7 @@ const getStyleLoaders = (cssOptions, preProcessor) => {
       loader: require.resolve(preProcessor),
       options: {
         sourceMap: shouldUseSourceMap,
+        options: { includePaths: ['node_modules','src'] }
       },
     });
   }

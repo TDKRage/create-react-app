@@ -71,7 +71,10 @@ const getStyleLoaders = (cssOptions, preProcessor) => {
     },
   ];
   if (preProcessor) {
-    loaders.push(require.resolve(preProcessor));
+    loaders.push({
+      loader: require.resolve(preProcessor),
+      options: { includePaths: ['node_modules','src'] }
+    });
   }
   return loaders;
 };
